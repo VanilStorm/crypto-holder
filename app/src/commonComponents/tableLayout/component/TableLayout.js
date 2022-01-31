@@ -1,10 +1,9 @@
 import React from 'react';
 
 const TableLayout = ({test}) => {
-    console.log(test)
     return (
-        <table>
-            <thead>
+        <table style={{width:'36vw', marginTop:'20px'}}>
+            <thead style={{fontSize: '17px'}}>
             <tr>
                 <th>Rank</th>
                 <th>Name</th>
@@ -12,13 +11,14 @@ const TableLayout = ({test}) => {
             </tr>
             </thead>
             <tbody>
-                {test && test.map((item, index) =>(
-                    <tr key={index}>
-                        <td>{item.rank}</td>
-                        <td>{item.name}</td>
-                        <td>{item.price}</td>
-                    </tr>
-                ))}
+            {test && test.map((item, index) => (
+                <tr key={index}>
+                    <td style={{textAlign:'center', paddingBottom:'10px'}}>{item.rank}</td>
+                    <td style={{textAlign:'center'}}>{item.name}</td>
+                    <td style={{textAlign:'center'}}>{item.price}</td>
+                    <td style={{border: '1px solid black', width:'15px', textAlign:'center'}}>+</td>
+                </tr>
+            ))}
             </tbody>
         </table>
     );
