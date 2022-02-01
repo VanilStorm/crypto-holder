@@ -1,12 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import HeaderLayout from "../component/HeaderLayout";
+import {connect} from "react-redux";
 
-const HeaderContainer = () => {
+const HeaderContainer = ({selectedCoins}) => {
+    const [active, setActive] = useState(false)
+
     return (
         <div>
-            <HeaderLayout/>
+            <HeaderLayout active={active} setActive={setActive} selectedCoins={selectedCoins}/>
         </div>
     );
 };
 
-export default HeaderContainer;
+const mapStateToProps = state => ({
+    selectedCoins: state.coinReducer.selectedCoins
+})
+
+export default connect(mapStateToProps,{})(HeaderContainer);

@@ -6,15 +6,15 @@ import {getAllCoins} from "../../../redux/reducers/coinReducer/coinReducer";
 const MainBlockContainer = ({allCoins,popularCoins,getAllCoins}) => {
 
     useEffect(()=> {
-        if(localStorage.length) {
+        if(!localStorage.length) {
             getAllCoins()
             localStorage.setItem('coins', JSON.stringify(allCoins))
             localStorage.setItem('popularCoins', JSON.stringify(popularCoins))
         }
-        if(JSON.parse(localStorage.getItem('coins')) === {}) {
+        if(JSON.parse(localStorage.getItem('coins')) !== {}) {
             localStorage.clear()
         }
-    },[allCoins])
+    },[])
 
     const coinsStock = JSON.parse(localStorage.getItem('coins'))
 

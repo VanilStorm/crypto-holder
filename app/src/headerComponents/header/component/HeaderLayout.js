@@ -3,14 +3,17 @@ import styles from './HeaderLayout.module.css'
 
 import MainCoinsLayout from "../../mainCoins/component/MainCoinsLayout";
 import CostDifference from "../../costDifference/costDifference";
-import PortfolioLayout from "../../portfolio/component/PortfolioLayout";
+import PortfolioLayout from "../../../commonComponents/portfolioLayout/component/portfolioLayout";
 
-const HeaderLayout = ({}) => {
+const HeaderLayout = ({setActive,active,selectedCoins}) => {
     return (
-        <div className={styles.wrapper}>
-            <MainCoinsLayout/>
-            <CostDifference/>
-            <PortfolioLayout/>
+        <div>
+            <div className={styles.wrapper}>
+                <MainCoinsLayout/>
+                <CostDifference/>
+                <button className={styles.portfolio} onClick={() => setActive(!active)}>Portfolio</button>
+            </div>
+            {active && <PortfolioLayout active={active} setActive={setActive} selectedCoins={selectedCoins}/>}
         </div>
     );
 };

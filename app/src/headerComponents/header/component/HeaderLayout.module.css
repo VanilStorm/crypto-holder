@@ -2,3 +2,16 @@
     display: flex;
     justify-content: space-between;
 }
+
+.wrapper button {
+    font-size: 16px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 809px) {
+    .wrapper, .wrapper button {
+        font-size: 12px;
+    }
+}

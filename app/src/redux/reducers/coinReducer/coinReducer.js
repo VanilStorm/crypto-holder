@@ -3,7 +3,8 @@ import {coinsAPI} from "../../../api/api";
 
 const initialState = {
     allCoins: [],
-    popularCoins: []
+    popularCoins: [],
+    selectedCoins: []
 }
 
 export const coinReducer = (state = initialState, action) => {
