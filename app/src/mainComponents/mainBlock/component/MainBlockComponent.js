@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import TableContainer from "../../../commonComponents/tableLayout/container/TableContainer";
 
-const MainBlockComponent = () => {
+const MainBlockComponent = ({coinsStock}) => {
+    useEffect(()=> {},[coinsStock])
     return (
         <div>
-            <TableContainer/>
+            <TableContainer coinsStock={coinsStock}/>
         </div>
     );
 };
