@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Routes} from "react-router-dom";
-import MainBlockContainer from "../mainComponents/mainBlock/container/MainBlockContainer";
+import MainBlockContainer from "../components/main/mainBlock/container/MainBlockContainer";
 
 const RoutesPage = () => {
     return (

@@ -1,5 +1,4 @@
-import {TYPES} from "./actionTypes";
-import {coinsAPI} from "../../../api/api";
+import {TYPES} from "../actionTypes/actionTypes";
 
 const initialState = {
     allCoins: [],
@@ -14,17 +13,13 @@ export const coinReducer = (state = initialState, action) => {
                 ...state, allCoins: action.coins , popularCoins: action.coins.filter((item,index) => index < 3)
             }
         }
+        case TYPES.SET_SELECTED_COIN: {
+            return {
+                ...state, selectedCoins: [...state.selectedCoins, action.selected],
+            }
+        }
 
         default:
             return state
     }
 }
-
-export const setAllCoins = coins => ({type: TYPES.SET_ALL_COINS, coins})
-export const getAllCoins = () => async dispatch => {
-    const response = await coinsAPI.getAllCoinsAPI()
-    if(response.status === 200) {
-        dispatch(setAllCoins(response.data.data))
-    }
-}
-

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './MainLayout.module.css'
-import HeaderContainer from "../../../headerComponents/header/container/HeaderContainer";
+import HeaderContainer from "../../../header/header/container/HeaderContainer";
 
 const MainLayout = ({children}) => {
     return (

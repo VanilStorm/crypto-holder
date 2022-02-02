@@ -1,0 +1,20 @@
+.table {
+    width: 36vw;
+    margin-top: 20px;
+}
+
+.thead {
+    font-size: 17px;
+}
+
+.tr td {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.tr td:last-child {
+    font-size: 15px;
+    width: 25px;
+    height: 20px;
+    border: 1px solid black;
+}

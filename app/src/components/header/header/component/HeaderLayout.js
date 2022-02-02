@@ -3,7 +3,7 @@ import styles from './HeaderLayout.module.css'
 
 import MainCoinsLayout from "../../mainCoins/component/MainCoinsLayout";
 import CostDifference from "../../costDifference/costDifference";
-import PortfolioLayout from "../../../commonComponents/portfolioLayout/component/portfolioLayout";
+import PortfolioLayout from "../../../common/portfolioLayout/component/portfolioLayout";
 
 const HeaderLayout = ({setActive,active,selectedCoins}) => {
     return (
