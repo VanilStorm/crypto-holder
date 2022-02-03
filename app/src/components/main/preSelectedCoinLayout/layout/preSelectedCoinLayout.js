@@ -4,6 +4,7 @@ import styles from './style.module.css'
 const PreSelectedCoinLayout = ({
                                    setActive, setQuantity, quantity,
                                    currentCoin, handleSelect, setCurrentCoin,
+                                   selectedCoins
                                }) => {
     return (
         <div onClick={() => setActive(false)} className={styles.wrapper}>
@@ -16,8 +17,13 @@ const PreSelectedCoinLayout = ({
                            onChange={e => setQuantity(e.target.value)}
                     />
                     <button onClick={() => {
-                        handleSelect(currentCoin)
+                        if (quantity >= 1) {
+                            handleSelect(currentCoin)
+                        }
                         setCurrentCoin(currentCoin.quantity = quantity)
+                        if(!selectedCoins.length) {
+                            localStorage.setItem('selectedCoins', JSON.stringify(currentCoin))
+                        }
                         setActive(false)
                     }}>Add
                     </button>

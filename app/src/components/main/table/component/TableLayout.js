@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from './style.module.css'
-import PreSelectedCoinLayout from "../../preSelectedCoinLayout/layout/preSelectedCoinLayout";
 
 const TableLayout = ({
-                         coinsStock, handleSelect,
-                         active, setActive,
-                         setQuantity, quantity,
-                         setCurrentCoin, currentCoin
+                         paginationItems, setActive,
+                         quantity, setCurrentCoin,
+                         pagesQuantity, handleSetPage
                      }) => {
     return (
         <div>
@@ -19,11 +17,11 @@ const TableLayout = ({
                 </tr>
                 </thead>
                 <tbody>
-                {coinsStock && coinsStock.map((item, index) => (
+                {paginationItems && paginationItems.map((item, index) => (
                     <tr className={styles.tr} key={index}>
                         <td>{item.rank}</td>
                         <td>{item.name}</td>
-                        <td>{'$' + item.vwap24Hr}</td>
+                        <td>{'$' + ' ' + Number(item.vwap24Hr).toFixed(2)}</td>
                         <td onClick={() => {
                             setCurrentCoin({name: item.name, rank: item.rank, price: item.vwap24Hr, quantity: quantity})
                             setActive(true)
@@ -32,6 +30,11 @@ const TableLayout = ({
                 ))}
                 </tbody>
             </table>
+            <div className={styles.paginationBtns}>
+                {pagesQuantity && pagesQuantity.map((item, index) => {
+                    return <div className={styles.page} onClick={() => handleSetPage(item)} key={index}>{item}</div>
+                })}
+            </div>
         </div>
     );
 };
