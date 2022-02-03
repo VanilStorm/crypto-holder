@@ -19,6 +19,12 @@ export const coinReducer = (state = initialState, action) => {
             }
         }
 
+        case TYPES.DELETE_COIN: {
+            return {
+                ...state, selectedCoins: state.selectedCoins.filter((item, index) => item.name !== action.name)
+            }
+        }
+
         default:
             return state
     }

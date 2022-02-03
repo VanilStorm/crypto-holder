@@ -10,3 +10,5 @@ export const getAllCoins = () => async dispatch => {
 }
 
 export const setSelectedCoins = selected => ({type: TYPES.SET_SELECTED_COIN, selected})
+
+export const deleteCoin = name => ({type: TYPES.DELETE_COIN, name})

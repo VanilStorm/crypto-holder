@@ -1,9 +1,12 @@
 import React from 'react';
 
-const CostDifference = () => {
+const CostDifference = ({selectedCoins}) => {
     return (
         <div>
-            <span>134,32 USD +2,38 (1,80 %)</span>
+            <span>$</span>
+            {selectedCoins.length && selectedCoins.reduce((acc, item) => {
+                return acc + Number(item.price).toFixed(2) * item.quantity
+            }, 0)}
         </div>
     );
 };

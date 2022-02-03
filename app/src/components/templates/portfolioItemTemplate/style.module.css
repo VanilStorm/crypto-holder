@@ -1,3 +1,22 @@
 .wrapper span{
     margin-right: 10px;
 }
+
+.wrapper button {
+    font-size: 15px;
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.wrapper button:hover {
+    color: white;
+    background-color: rgba(0,0,0,.6);
+}
+
+.wrapper button:active {
+    background-color: rgba(0,0,0,.4);
+    color: white;
+}
