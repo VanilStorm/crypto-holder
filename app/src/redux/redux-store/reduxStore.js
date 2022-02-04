@@ -1,11 +1,11 @@
-import {createStore, combineReducers, applyMiddleware} from "redux";
-import {coinReducer} from "../reducers/coinReducer/reducer/coinReducer";
-import thunkMiddleware from "redux-thunk"
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+import {coinReducer} from '../reducers/coinReducer/reducer/coinReducer';
+import thunkMiddleware from 'redux-thunk';
 
 const reducers = combineReducers({
-    coinReducer: coinReducer
-})
+  coinReducer: coinReducer
+});
 
-const store = createStore(reducers,applyMiddleware(thunkMiddleware))
+const store = createStore(reducers, applyMiddleware(thunkMiddleware));
 
-export default store
+export default store;
