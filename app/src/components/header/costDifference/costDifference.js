@@ -1,6 +1,7 @@
 import React from 'react';
 
 const CostDifference = ({selectedCoins}) => {
+ 
   return (
     <div>
       <span>$</span>

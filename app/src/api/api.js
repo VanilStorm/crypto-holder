@@ -2,6 +2,6 @@ import axios from 'axios';
 
 export const coinsAPI = {
   getAllCoinsAPI() {
-    return axios.get('https://api.coincap.io/v2/assets').then((data) => data);
+    return axios.get(`${process.env.REACT_APP_API_URL}/assets`).then((data) => data);
   }
 };

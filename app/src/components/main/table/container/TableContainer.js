@@ -10,7 +10,7 @@ const TableContainer = ({handleSelect, selectedCoins}) => {
   const [currentPage, setPage] = useState(1);
 
   const pageItems = 15;
-  const pages = Math.round(JSON.parse(localStorage.getItem('coins')).length / pageItems);
+  const pages =  Math.round(JSON.parse(localStorage.getItem('coins')).length / pageItems);
   const items = JSON.parse(localStorage.getItem('coins'));
   const pagesQuantity = [];
   const paginationItems = [];

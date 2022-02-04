@@ -19,12 +19,10 @@ const MainBlockContainer = ({allCoins, popularCoins, getAllCoins, setSelectedCoi
 
 
   useEffect(() => {
-    // Boolean(selectedCoinsStock.length) && setSelectedCoins(selectedCoinsStock)
     localStorage.setItem('selectedCoins', JSON.stringify(selectedCoins));
   }, [selectedCoins]);
 
   const coinsStock = JSON.parse(localStorage.getItem('coins'));
-  const selectedCoinsStock = JSON.parse(localStorage.getItem('selectedCoins'));
 
   const handleSelect = useCallback((coin) => setSelectedCoins(coin), []);
 
